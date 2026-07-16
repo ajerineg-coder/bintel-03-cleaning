@@ -21,63 +21,50 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
+For my technical modification, I added two new attributes to each of the three raw datasets.
 
-Include:
+### Customer Data
+- SpendingScore
+- TierLevel
 
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
+### Product Data
+- WarrantyMonths
+- ShelfZone
 
-Compared with the example project,
-explain what is different and why the change matters.
+### Sales Data
+- DiscountPercent
+- PaymentType
 
-Was it easy, or surprisingly challenging and why do you think so?
+I picked these because they add more information that could be useful later if someone wanted to analyze customer behavior, products, or sales trends.
+
+To make sure everything worked, I replaced the raw CSV files, reran all three preparation scripts, and checked that the prepared files were created successfully. The scripts finished without any errors.
+
+Compared to the original example project, my version includes extra data fields while keeping the same cleaning process. Adding the columns wasn't too bad, but making sure I had the correct files, rerunning the scripts, and getting everything updated in GitHub took the most time.
 
 ## Phase 5. Custom Project
 
-Describe your custom data cleaning and preparation work.
-
 ### Basis and Data
 
-Describe the raw data you started with.
+I started with the three Smart Sales CSV files for customers, products, and sales. Each file had data that needed to be cleaned before it could be used for analysis, including duplicate records, inconsistent formatting, missing values, and invalid records.
 
-Include:
-
-- The three smart sales data files and their known quality issues
-- Which issues you chose to address and which you deferred
-- Any important assumptions about what counts as valid data
+I also added my own custom attributes to each dataset before running the preparation scripts.
 
 ### Cleaning Approach
 
-Describe the ETVL preparation steps you implemented.
-
-Include:
-
-- What cleaning steps you applied to each table
-- What custom cleaning logic you added beyond the example
-- How you verified the data was clean before saving
+The preparation scripts removed duplicate records, standardized formatting, handled missing values, and filtered out invalid data. After updating my raw files, I reran each script and made sure the prepared files were generated successfully.
 
 ### Before and After
 
-Describe the impact of your cleaning work.
+The customer dataset went from **201 raw records to 200 prepared records** after duplicate records were removed.
 
-Include:
+The product dataset stayed at **100 records** because no rows needed to be removed.
 
-- How many rows were removed or corrected in each table
-- What the data looked like before and after (use screenshots or log output)
-- Whether any cleaning decisions were judgment calls and why you made them
+The sales dataset went from **2,400 raw records to 2,182 prepared records** after the cleaning rules were applied.
+
+I also checked that all three prepared CSV files were created successfully after each script finished running.
 
 ### Summary
 
-Summarize your custom cleaning work.
+For my custom project, I expanded the datasets by adding six new attributes across the customer, product, and sales files. After that, I reran the preparation scripts to make sure everything still worked correctly.
 
-Include:
-
-- What you implemented beyond the example
-- What the prepared data looks like
-- What you learned about data quality
-- What kinds of real business problems data cleaning enables
-
-Display at least one chart or screenshot showing your before and after results.
+This assignment helped me see how important data cleaning is before analyzing data. Even small changes to the raw files can affect the final results, so it's worth taking the time to make sure everything is cleaned and processed correctly.
